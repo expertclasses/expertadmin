@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admission</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="./images/favicon-32x32.png" type="image/x-icon">
+</head>
+<body>
+    <section class="py-5 flex items-center justify-center  space-x-5">
+        <div class="mb-3">
+            <div class="relative mb-4 flex w-full flex-wrap items-stretch">
+              <input
+                type="text" id="searchInput"
+                class="relative m-0 -mr-0.5 block min-w-0 flex-auto rounded-l border border-solid border-neutral-300 bg-transparent bg-clip-padding px-3 py-[0.25rem] text-base font-normal leading-[1.6] text-neutral-700 outline-none transition duration-200 ease-in-out focus:z-[3] focus:border-primary focus:text-neutral-700 focus:shadow-[inset_0_0_0_1px_rgb(59,113,202)]"
+                placeholder="Search"
+                aria-label="Search"
+                aria-describedby="button-addon1" />
+          
+              <!--Search button-->
+              <button onclick="searchData()"
+                class="relative z-[2] flex items-center rounded-r bg-blue-500 px-6 py-2.5 text-xs font-medium uppercase leading-tight text-black shadow-md transition duration-150 ease-in-out hover:bg-primary-700 hover:shadow-lg focus:bg-primary-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary-800 active:shadow-lg"
+                type="button"
+                id="button-addon1"
+                data-te-ripple-init
+                data-te-ripple-color="light">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  class="h-5 w-5">
+                  <path
+                    fill-rule="evenodd"
+                    d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z"
+                    clip-rule="evenodd" />
+                </svg>
+              </button>
+
+              <a href="https://expertclass.netlify.app/admission"  class="ml-20 inline-flex items-center py-2.5 px-3 ms-2 text-sm font-medium text-white bg-blue-700 rounded-lg border border-blue-700 hover:bg-blue-800">
+                Add New Admission
+            </a>
+
+            </div>
+            
+          </div>
+          
+    </section>
+
+    <!-- modal start -->
+    <!-- The Modal for editing text and message -->
+<div id="editModal" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('editModal')">&times;</span>
+      <form id="editForm">
+        <label for="editbranch">Branch</label>
+          <select id="editbranch" required>
+            <option disabled selected value>-- select branch --</option>
+            <option value="Bailhongal">Bailhongal</option>
+            <option value="Neginhal">Neginhal</option>
+            <option value="Yaragatti">Yaragatti</option>
+            <option value="Ichanla">Ichanla</option>
+          </select>
+          <label for="year">Year</label>
+          <input
+            type="number"
+            name="year"
+            id="edityear"
+            placeholder="Year"
+            required
+          />
+          <label for="editroolnumber"
+            >Rool No:
+          </label>
+          <input
+            type="number"
+            name="roll-number"
+            id="editroolnumber"
+            placeholder="Number"
+            required
+          />
+          <label for="name">Student Name (as per SSLC)</label>
+          <input
+            type="text"
+            name="user-name"
+            id="editname"
+            placeholder="Name"
+            required
+          />
+          <label for="fathername">Father Name</label>
+          <input
+            type="text"
+            name="father-name"
+            id="editfathername"
+            placeholder="Father Name"
+            required
+          />
+          <label for="mothername">Mother Name: </label>
+          <input
+            type="text"
+            name="mother-name"
+            id="editmothername"
+            placeholder="Mother Name"
+            required
+          />
+          <label for="editdob">DOB</label>
+            <input type="date" name="editdob" id="editdob" required />
+
+            <label for="editage">Age</label>
+          <input
+            type="number"
+            name="editage"
+            id="editage"
+            placeholder="age"
+            required/>
+
+          <label for="email">Email: </label>
+          <input
+            type="email"
+            name="Email"
+            id="editemail"
+            placeholder="Email"
+            required
+          />
+          <label for="qualification">Qualification: </label>
+          <input
+            type="text"
+            name="qualification"
+            id="editqualification"
+            placeholder="Qualification"
+            required
+          />
+          <label for="caste">Caste</label>
+          <select id="editcaste" required>
+            <option disabled selected value>-- select caste --</option>
+            <option value="SC">SC</option>
+            <option value="ST">ST</option>
+            <option value="OBC">OBC</option>
+            <option value="GM">GM</option>
+          </select>
+          <label for="gender">Gender</label>
+          <select id="editgender" required>
+            <option disabled selected value>-- select gender --</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+          </select>
+          <label for="religion">Religion</label>
+          <select id="editreligion" required>
+            <option disabled selected value>-- select religion --</option>
+            <option value="Hindu">Hindu</option>
+            <option value="Sikh">Sikh</option>
+            <option value="Jain">Jain</option>
+            <option value="Christian">Christian</option>
+            <option value="Buddhist">Buddhist</option>
+            <option value="Muslim">Muslim</option>
+          </select>
+          <label for="course">Select Course</label>
+          <select id="editcourse" required>
+            <option disabled selected value>-- select course --</option>
+            <option value="C & C++">C & C++</option>
+            <option value="Basic">Basic</option>
+            <option value="DTP">DTP</option>
+            <option value="Tally">Tally</option>
+            <option value="One Year">One Year</option>
+            <option value="Basic,DTP">Basic, DTP</option>
+            <option value="Basic,Tally">Basic, Tally</option>
+            <option value="DTP,Tally">DTP, Tally</option>
+            <option value="Autocad">Autocad</option>
+            <option value="Oracle">Oracle</option>
+            <option value="Java">Java</option>
+            <option value="Nudi">Nudi 4.0 & 6.0</option>
+            <option value="Internet">Internet</option>
+          </select>
+
+          <label for="address">Full Address</label>
+          <input
+            type="text"
+            name="address"
+            id="editaddress"
+            placeholder="Address"
+            required/>
+
+          <label for="taluk">Taluk</label>
+          <input
+            type="text"
+            name="taluk"
+            id="edittaluk"
+            placeholder="Taluk"
+            required/>
+          
+          <label for="district">District</label>
+          <input
+            type="text"
+            name="district"
+            id="editdistrict"
+            placeholder="District"
+            required/>
+
+            <label for="pincode">Pincode</label>
+            <input
+              type="number"
+              name="pincode"
+              id="editpincode"
+              placeholder="Pincode"
+              required/>
+
+          <label for="slot-time">Class Time</label>
+          <select id="editslot-time" required>
+            <option disabled selected value>-- select time --</option>
+            <option value="8am to 9am">8am to 9am</option>
+            <option value="9am to 10am">9am to 10am</option>
+            <option value="10am to 11am">10am to 11am</option>
+            <option value="11am to 12pm">11am to 12pm</option>
+            <option value="12pm to 1pm">12pm to 1pm</option>
+            <option value="1pm to 2pm">1pm to 2pm</option>
+            <option value="2pm to 3pm">2pm to 3pm</option>
+            <option value="3pm to 4pm">3pm to 4pm</option>
+            <option value="4pm to 5pm">4pm to 5pm</option>
+            <option value="5pm to 6pm">5pm to 6pm</option>
+          </select>
+          <h4 style="margin-top: 5px">Select Course Time Duration</h4>
+          <div>
+            <label for="start-time">Start:</label>
+            <input type="date" name="starttime" id="editstart-time" required />
+            <label for="end-time">End:</label>
+            <input type="date" name="endtime" id="editend-time" required />
+          </div>
+          
+          <label for="userno">Student Mobile No: </label>
+          <input
+            type="number"
+            name="studentno"
+            id="edituserno"
+            placeholder="Student No"
+            required
+          />
+          <label for="parentsno">Parents Mobile No: </label>
+          <input
+            type="number"
+            name="parentsno"
+            id="editparentsno"
+            placeholder="Parents No"
+            required
+          />
+
+          <h4 style="margin-top: 5px">Payment</h4>
+
+          <div>
+            <label for="editfirstpayment">Payment 01</label>
+          <input
+            type="number"
+            name="editfirstpayment"
+            id="editfirstpayment"
+            placeholder="Amount"/>
+
+            <label for="editfristpaydate">Pay 01 Date</label>
+            <input type="date" name="editfristpaydate" id="editfristpaydate"/>
+          </div>
+
+
+          <div>
+            <label for="editsecondpayment">Payment 02</label>
+          <input
+            type="number"
+            name="editsecondpayment"
+            id="editsecondpayment"
+            placeholder="Amount"/>
+            <label for="editsecondpaydate">Pay 02 Date</label>
+            <input type="date" name="editsecondpaydate" id="editsecondpaydate"/>
+          </div>
+
+
+          <div>
+            <label for="editthirdpayment">Payment 03</label>
+          <input
+            type="number"
+            name="editthirdpayment"
+            id="editthirdpayment"
+            placeholder="Amount"/>
+            <label for="editthirdpaydate">Pay 03 Date</label>
+            <input type="date" name="editthirdpaydate" id="editthirdpaydate"/>
+          </div>
+
+
+          <div>
+            <label for="editfourtpayment">Payment 04</label>
+          <input
+            type="number"
+            name="editfourtpayment"
+            id="editfourtpayment"
+            placeholder="Amount"/>
+
+            <label for="editfourtpaydate">Pay 04 Date</label>
+            <input type="date" name="editfourtpaydate" id="editfourtpaydate"/>
+          </div>
+
+          <div>
+            <label for="editfifthpayment">Payment 05</label>
+          <input
+            type="number"
+            name="editfifthpayment"
+            id="editfifthpayment"
+            placeholder="Amount"/>
+
+            <label for="editfifthpaydate">Pay 05 Date</label>
+            <input type="date" name="editfifthpaydate" id="editfifthpaydate"/>
+          </div>
+
+
+        <button type="button" id="saveEditedBtn">Save</button>
+      </form>
+    </div>
+  </div>
+    <!-- modal end -->
+
+    <div  class="relative overflow-x-auto shadow-md sm:rounded-lg">
+        <div class="flex p-5 font-medium shadow-md space-x-36">
+            <span>Sr</span>
+            <span>RollNumber</span>
+            <span>StudentName</span>
+            <span>Course</span>
+            <span>StudentNo</span>
+            <span>Action</span>
+        </div>
+    </div>
+
+    <div id="admissionData">
+       
+    </div>
+
+<script src="https://www.gstatic.com/firebasejs/5.5.9/firebase.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.js"></script>
+<!-- Add jsPDF library -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    
+    <script src="./js/admission.js"></script>
+
+</body>
+</html>

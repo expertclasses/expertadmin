@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./images/favicon-32x32.png" type="image/x-icon">
+    <title>Expert Classes</title>
+  <link rel="stylesheet" crossorigin href="style.css">
+</head>
+<body class="lg:mx-32 flex flex-col space-y-28">
+  <h1 class="text-center text-2xl sm:text-5xl font-medium mt-20">Well Come Expert Classes!</h1>
+  <form onsubmit="login()" id="loginForm" class="max-w-sm mx-auto lg:w-96 sm:w-auto bg-slate-100 p-10 rounded">
+    <div class="mb-5">
+      <label for="email" class="block mb-2 text-sm font-medium text-gray-900 ">Your email</label>
+      <input type="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="email address" required>
+    </div>
+    <div class="mb-5">
+      <label for="password" class="block mb-2 text-sm font-medium text-gray-900">Your password</label>
+      <input type="password" id="password" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="password" required>
+      <br>
+      <a href="#" class="text-green-500" onclick="forgotPass()">Forgot Password</a>
+    </div>
+    <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">Login</button>
+  </form>
+</body>
+ <!-- The core Firebase JS SDK is always required and must be listed first -->
+ <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
+
+ <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+ <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-analytics.js"></script>
+ <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-auth.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.js"></script>
+
+<script src="./js/auth.js"></script>
+
+
+</html>
