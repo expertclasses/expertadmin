@@ -446,7 +446,7 @@ function fullDetailsButtonAsPDF(Branch, Year, RollNumber,StudentName,FatherName,
     doc.setFont('helvetica');
     doc.setTextColor(50, 50, 50);
     doc.setFontSize(24);
-    doc.text('Expert Computer Classes', certificateWidth / 2, 30, { align: 'center' });
+    doc.text('Expert Computer Education Center', certificateWidth / 2, 30, { align: 'center' });
     doc.setFontSize(15);
     doc.text('Channamma Samadi Road Bailhongal - 591102, Belagavi, Karnataka, India', certificateWidth / 2, 50, { align: 'center' });
 
