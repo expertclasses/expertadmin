@@ -393,7 +393,7 @@ function certificateAsPDF(Branch, Year, RollNumber,StudentName,FatherName,Mother
     doc.setFontSize(12);
     doc.text(`Tel: +91 8550855843`, certificateWidth / 1.1, 30, { align: 'right' });
     doc.text(`Email: expertcomputer153@gmail.com`, certificateWidth / 1.1, 45, { align: 'right' });
-    doc.text(`www.expertclaese.vercel.com`, certificateWidth / 1.1, 60, { align: 'right' });
+    doc.text(`https://expertclasses.vercel.app/`, certificateWidth / 1.1, 60, { align: 'right' });
     
     doc.setFontSize(16);
     doc.text(`Name of the Courser: ${Course}`, certificateWidth / 15, 220, { align: 'left'});
@@ -402,8 +402,8 @@ function certificateAsPDF(Branch, Year, RollNumber,StudentName,FatherName,Mother
 
     doc.text(`Course Duration: ${Starttime} to ${Endtime}`, certificateWidth / 15, 280, { align: 'left'});
     doc.setFontSize(22);
-    doc.text(`This is to certifify that Mr/Miss ${StudentName}`, certificateWidth / 15, 320, { align: 'left'});
-    doc.text(`has successfully completed ${Course} course.`, certificateWidth / 15, 340, { align: 'left'});
+    doc.text(`This is to certifify that Mr/Miss ${StudentName} has`, certificateWidth / 2, 320, { align: 'center'});
+    doc.text(`successfully completed ${Course} course.`, certificateWidth / 2, 340, { align: 'center'});
 
     doc.setFontSize(16);
     doc.text(`The course is completed on ${Endtime} successfully.`, certificateWidth / 15, 380, { align: 'left'});
