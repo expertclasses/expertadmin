@@ -402,8 +402,8 @@ function certificateAsPDF(Branch, Year, RollNumber,StudentName,FatherName,Mother
 
     doc.text(`Course Duration: ${Starttime} to ${Endtime}`, certificateWidth / 15, 280, { align: 'left'});
     doc.setFontSize(22);
-    doc.text(`This is to certifify that Mr/Miss ${StudentName} has`, certificateWidth / 2, 320, { align: 'center'});
-    doc.text(`successfully completed ${Course} course.`, certificateWidth / 2, 340, { align: 'center'});
+    doc.text(`This is to certifify that Mr/Miss ${StudentName}`, certificateWidth / 2, 320, { align: 'center'});
+    doc.text(`has successfully completed ${Course} course.`, certificateWidth / 2, 340, { align: 'center'});
 
     doc.setFontSize(16);
     doc.text(`The course is completed on ${Endtime} successfully.`, certificateWidth / 15, 380, { align: 'left'});
