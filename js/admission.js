@@ -292,7 +292,7 @@ function detailsAsPDF(Branch, Year, RollNumber,StudentName,FatherName,Mothername
     doc.setFontSize(24);
     doc.text('Student Registration Form', certificateWidth / 2, 160, { align: 'center' });
     doc.setFontSize(18);
-    doc.text('Reg No: 2020ECE001', certificateWidth / 2, 178, { align: 'center' });
+    doc.text(`Reg No: ${RollNumber}`, certificateWidth / 2, 178, { align: 'center' });
 
     doc.setFontSize(16);
     doc.text(`Name: ${StudentName}`, certificateWidth / 15, 250, { align: 'left'});
